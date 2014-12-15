@@ -1,16 +1,22 @@
 machine:
+  timezone:
+    Asia/Tokyo
   node:
     version: 0.10.32
+  services:
+    - mysql
   environment:
     NODE_ENV: development
-checkout:
-  post:
-    - git submocule sync
+    DATABASE_URL: mysql://appliv_dev:@127.0.0.1:5432/circle_test
 dependencies:
   override:
     - npm install
+#database:
+#  override:
+#    - node
+#    - mysql -u appliv_dev appliv_adnw < testquery.sql
 test:
-  post:
-    - npm run mocha:
+  override:
+    - npm test:
         environment:
           NODE_ENV: development
