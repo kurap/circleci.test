@@ -7,7 +7,7 @@ machine:
     - mysql
   environment:
     NODE_ENV: development
-    DATABASE_URL: mysql://appliv_dev:@127.0.0.1:5432/circle_test
+    DATABASE_URL: mysql://appliv_dev:@127.0.0.1:3306/appliv_dev
 dependencies:
   override:
     - npm install
