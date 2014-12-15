@@ -7,14 +7,14 @@ machine:
     - mysql
   environment:
     NODE_ENV: development
-    DATABASE_URL: mysql://appliv_dev:@127.0.0.1:3306/appliv_dev
+    DATABASE_URL: mysql://dev:@127.0.0.1:3306/devdb
 dependencies:
   override:
     - npm install
 #database:
 #  override:
 #    - node
-#    - mysql -u appliv_dev appliv_adnw < testquery.sql
+#    - mysql -u dev devdb < testquery.sql
 test:
   override:
     - npm test:
