@@ -5,6 +5,8 @@ machine:
     version: 0.10.32
   services:
     - mysql
+    - redis
+    - memcached
   environment:
     NODE_ENV: development
     DATABASE_URL: mysql://dev:@127.0.0.1:3306/devdb
